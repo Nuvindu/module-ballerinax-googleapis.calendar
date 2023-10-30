@@ -17,7 +17,14 @@ jobs:
     env:
       BALLERINA_${{ github.event.inputs.bal_central_environment }}_CENTRAL: true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+
+      # Set up Java Environment
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 17.0.7
 
       # Setup Ballerina Environment
       - name: Set Up Ballerina
