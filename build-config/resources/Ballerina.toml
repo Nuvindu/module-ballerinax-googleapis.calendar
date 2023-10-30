@@ -1,5 +1,5 @@
 [package]
-distribution = "2201.7.0"
+distribution = "2201.8.2"
 org = "ballerinax"
 name = "googleapis.calendar"
 version = "@toml.version@"
@@ -11,3 +11,6 @@ repository = "https://github.com/ballerina-platform/module-ballerinax-googleapis
 
 [build-options]
 observabilityIncluded = true
+
+[platform.java17]
+graalvmCompatible = true
