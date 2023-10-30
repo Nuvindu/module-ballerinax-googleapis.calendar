@@ -83,20 +83,20 @@ public function main() returns error? {
 
     // create access control rule and assign it to a team member
     calendar:AclRule acl = check calendarClient->createAclRule(<string>calendarResult.id, {
-        scope: {
-            'type: "user",
-            value: "team_member@gmail.com"
+        "scope": {
+            "type": "user",
+            "value": "team_member@gmail.com"
         },
-        role: "reader"
+        "role": "reader"
     });
 
     // change access control rule
     calendar:AclRule|error response = calendarClient->updateAclRule(<string>calendarResult.id, <string>acl.id, {
-        scope: {
-            'type: "user",
-            value: "team_member@gmail.com"
+        "scope": {
+            "type": "user",
+            "value": "team_member@gmail.com"
         },
-        role: "writer"
+        "role": "writer"
     });
     if response is error {
         log:printError(response.message());
